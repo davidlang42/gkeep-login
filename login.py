@@ -12,5 +12,12 @@ if not g_pass:
     exit(1)
 
 keep = gkeepapi.Keep()
-keep.login(g_user, g_pass)
+try:
+    keep.login(g_user, g_pass)
+except:
+    # upon logging in, this loads some of the user's data from keep
+    # this may crash because we are using old versions of gkeepapi/gpsoauth/etc which can't parse the data
+    # the login still succeeded and the resulting token is valid
+    pass
+
 print(keep.getMasterToken())
