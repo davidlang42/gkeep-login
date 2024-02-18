@@ -3,6 +3,6 @@ RUN apt update
 RUN apt install -y python3 pip
 RUN pip install gkeepapi
 RUN pip install gpsoauth==1.0.2
-COPY --chmod=400 login.py /
-COPY --chmod=500 docker_entrypoint.sh /
-ENTRYPOINT [ "/docker_entrypoint.sh" ]
+COPY login.py /
+ENTRYPOINT [ "python3" ]
+CMD [ "/login.py" ]
