@@ -1,6 +1,6 @@
 FROM debian:bullseye
 RUN apt update
-RUN apt install -y python-is-python3 python3-pip
+RUN apt install -y python3 pip
 RUN pip install gkeepapi
 RUN pip install gpsoauth==1.0.2
 COPY --chmod=400 login.py /

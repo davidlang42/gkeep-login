@@ -14,4 +14,4 @@ fi
 
 set -u
 
-python /login.py "$GOOGLE_USERNAME" "$GOOGLE_APP_PASSWORD"
+python3 /login.py "$GOOGLE_USERNAME" "$GOOGLE_APP_PASSWORD"
